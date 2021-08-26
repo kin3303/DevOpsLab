@@ -34,7 +34,7 @@ pipeline{
                     def GroupId = "${pom.groupId}"
                     def NexusRepo = Version.endsWith("SNAPSHOT") ? "DevOpsLab-SNAPSHOT" : "DevOpsLab-RELEASE" 
                     
-                    nexusArtifactUploader artifacts: [[artifactId: "${ArtifactId}", classifier: '', file: 'target/${ArtifactId}-${Version}.war', type: 'war']], 
+                    nexusArtifactUploader artifacts: [[artifactId: "${ArtifactId}", classifier: '', file: "target/${ArtifactId}-${Version}.war", type: 'war']], 
                     credentialsId: 'nexus', 
                     groupId: "${GroupId}", 
                     nexusUrl: '172.20.10.170:8081', 
